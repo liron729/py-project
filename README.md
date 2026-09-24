@@ -10,13 +10,13 @@ A Python inventory management system with SQLite persistence and CRUD functional
 - Delete a product
 - Search products by name, category, or supplier
 - Local SQLite database persistence
-- CLI, Flask web app, and Tkinter GUI versions
+- CLI, Streamlit web app, and Tkinter GUI versions
 - FastAPI with Uvicorn for API
 
 ## Project Structure
 
 - `main.py` - command-line version
-- `flask_app.py` - Flask web application
+- `flask_app.py` - Streamlit web application
 - `gui_app.py` - Tkinter desktop application
 - `inventory_app/database.py` - database setup and connection
 - `inventory_app/models.py` - product model
@@ -32,7 +32,7 @@ A Python inventory management system with SQLite persistence and CRUD functional
 python main.py
 ```
 
-### Flask web app
+### Streamlit web app
 
 Install dependencies:
 
@@ -40,16 +40,16 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run the server:
+Run the app:
 
 ```bash
-python flask_app.py
+streamlit run flask_app.py
 ```
 
 Then open:
 
 ```text
-http://127.0.0.1:5000/
+http://localhost:8501
 ```
 
 ### Tkinter GUI app
@@ -85,13 +85,13 @@ The app creates a SQLite database named `inventory.db` in the project root.
 
 ## API endpoints
 
-The Flask app also exposes a REST API.
+The FastAPI app exposes a REST API.
 
 - `GET /api/products` — list all products or search with `?q=keyword`
 - `POST /api/products` — add a product with JSON body
 - `GET /api/products/<id>` — get one product by ID
 - `PUT /api/products/<id>` — update a product by ID
-- `DELETE /api/products/<id>` — delete a product by ID
+- `DELETE /api/products/<id>` — delete one product by ID
 
 Example JSON body for creating a product:
 
